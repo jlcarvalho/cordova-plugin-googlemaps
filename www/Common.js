@@ -233,6 +233,7 @@ function getAllChildren(root) {
             return node !== root && _shouldWatchByNative(node) &&
               ignoreTags.indexOf(tagName) == -1 &&
               node.tagName.indexOf("nav-decor") === -1 &&
+              typeof node.className === 'string' &&
               node.className.indexOf("ion-page") === -1 &&
               node.className.indexOf("fixed-content") === -1;
         });
@@ -243,6 +244,7 @@ function getAllChildren(root) {
             node = clickableElements[i];
             if (_shouldWatchByNative(node) &&
               ignoreTags.indexOf(tagName) == -1 &&
+              typeof node.className === 'string' &&
               node.className.indexOf("nav-decor") === -1 &&
               node.className.indexOf("ion-page") === -1 &&
               node.className.indexOf("fixed-content") === -1) {
